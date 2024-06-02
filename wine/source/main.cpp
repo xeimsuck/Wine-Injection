@@ -1,23 +1,27 @@
 #include <windows.h>
 
-// Launch cheat
-static void Start(HMODULE hDll) {
+#include "core/base.h"
 
+// Launch cheat
+static void laucnh(const HMODULE hDll) {
+    if(wine::core::init(hDll)) wine::core::start();
+    else wine::core::destroy();
 }
 
 // Stop cheat
-static void Stop() {
-
+static void end() {
+    wine::core::stop();
+    wine::core::destroy();
 }
 
 BOOL WINAPI DllMain(HMODULE hDll, const DWORD reason, LPVOID) {
     switch(reason){
         case DLL_PROCESS_ATTACH:
-            CreateThread(nullptr, 0, reinterpret_cast<LPTHREAD_START_ROUTINE>(Start),
+            CreateThread(nullptr, 0, reinterpret_cast<LPTHREAD_START_ROUTINE>(laucnh),
                 hDll, NULL, nullptr);
             break;
         case DLL_PROCESS_DETACH:
-            Stop();
+            end();
             break;
         case DLL_THREAD_ATTACH:
             break;
