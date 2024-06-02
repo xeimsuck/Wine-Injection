@@ -7,5 +7,5 @@ int wine::hooks::initHooks() {
 }
 
 void wine::hooks::destroyHooks() {
-
+    MH_Uninitialize();
 }
