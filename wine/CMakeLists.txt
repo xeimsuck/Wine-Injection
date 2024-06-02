@@ -10,5 +10,5 @@ add_library(wine SHARED source/main.cpp
 
 # MinHook
 ## link MinHook
-target_include_directories(wine PRIVATE "lib/MinHook/include")
+target_include_directories(wine gPRIVATE "lib/MinHook/include")
 target_link_libraries(wine "${CMAKE_CURRENT_LIST_DIR}/lib/MinHook/lib/libMinHook.a")
