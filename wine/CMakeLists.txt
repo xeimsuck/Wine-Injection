@@ -1,0 +1,1 @@
+add_library(wine SHARED source/main.cpp)

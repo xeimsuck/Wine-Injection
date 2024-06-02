@@ -3,4 +3,5 @@ project(AssaultCubeCheat)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(AssaultCubeCheat Wine/source/main.cpp)
+add_subdirectory(wine)
+
