@@ -1,6 +1,6 @@
 #ifndef DATA_H
 #define DATA_H
-#include "../core/base.h"
+#include "../core/base.hpp"
 
 namespace wine::mem::data {
     namespace stuff {

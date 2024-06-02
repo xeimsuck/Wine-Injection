@@ -1,6 +1,6 @@
 #include <windows.h>
 
-#include "core/base.h"
+#include "core/base.hpp"
 
 // Launch cheat
 static void laucnh(const HMODULE hDll) {

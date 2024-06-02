@@ -1,4 +1,4 @@
-#include "hooks.h"
+#include "hooks.hpp"
 #include <MinHook.h>
 
 int wine::hooks::initHooks() {

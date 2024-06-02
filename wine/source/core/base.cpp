@@ -1,6 +1,6 @@
-#include "base.h"
-#include "../memory/data.h"
-#include "../hooks/hooks.h"
+#include "base.hpp"
+#include "../memory/data.hpp"
+#include "../hooks/hooks.hpp"
 
 using namespace wine::mem;
 using namespace wine::hooks;
