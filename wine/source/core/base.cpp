@@ -1,9 +1,12 @@
 #include "base.hpp"
+
+#include "../gui/gui.h"
 #include "../memory/data.hpp"
 #include "../hooks/hooks.hpp"
 
 using namespace wine::mem;
 using namespace wine::hooks;
+using namespace wine::gui;
 
 static volatile bool isStoped = true; // true if cheat stoped
 
@@ -16,6 +19,7 @@ int wine::core::init(const HMODULE hDll) {
 
     // initialize modules
     if(initHooks()) return 1;
+    if(initGUI()) return 1;
 
     return 0;
 }

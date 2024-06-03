@@ -6,7 +6,9 @@ add_library(wine SHARED source/main.cpp
         source/memory/game/ac_client.exe.hpp
         source/memory/data.hpp
         source/hooks/hooks.cpp
-        source/hooks/hooks.hpp)
+        source/hooks/hooks.hpp
+        source/gui/gui.cpp
+        source/gui/gui.h)
 
 # MinHook
 ## link MinHook
