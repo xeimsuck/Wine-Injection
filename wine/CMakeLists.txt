@@ -11,6 +11,12 @@ add_library(wine SHARED source/main.cpp
         source/gui/gui.h)
 
 # MinHook
-## link MinHook
+## link
 target_include_directories(wine PRIVATE "lib/MinHook/include")
 target_link_libraries(wine "${CMAKE_CURRENT_LIST_DIR}/lib/MinHook/lib/libMinHook.a")
+
+# GLEW
+## link
+set(CMAKE_PREFIX_PATH "libs/glew/lib/cmake/glew")
+find_package(glew CONFIG REQUIRED)
+target_link_libraries(TheSingularity GLEW::glew_s)
