@@ -18,8 +18,8 @@ int wine::core::init(const HMODULE hDll) {
     if(data::stuff::hACClient) return 1;
 
     // initialize modules
-    if(initHooks()) return 1;
     if(initGUI()) return 1;
+    if(initHooks()) return 1;
 
     return 0;
 }
