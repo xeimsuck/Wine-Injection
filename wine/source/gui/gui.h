@@ -4,6 +4,7 @@
 namespace wine::gui {
     int initGUI();
     void destroyGUI();
+    void draw();
 }
 
 #endif //GUI_H

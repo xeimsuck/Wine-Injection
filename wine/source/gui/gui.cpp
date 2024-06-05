@@ -2,6 +2,11 @@
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <windows.h>
+
+static void drawMenu() {
+    // Draw menu
+}
 
 int wine::gui::initGUI() {
     // GLFW initialization
@@ -17,3 +22,6 @@ void wine::gui::destroyGUI() {
     glfwTerminate();
 }
 
+void wine::gui::draw() {
+    drawMenu();
+}
