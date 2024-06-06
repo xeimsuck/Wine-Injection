@@ -17,6 +17,9 @@ namespace wine::mem::data {
         inline bool isInstantKill = false;
         inline bool isAimBot = false;
     }
+    namespace binds {
+        inline unsigned short openMenu = VK_INSERT;
+    }
 }
 
 #endif //DATA_H
