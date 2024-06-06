@@ -22,9 +22,3 @@ target_link_libraries(wine "${CMAKE_CURRENT_LIST_DIR}/lib/MinHook/lib/libMinHook
 set(CMAKE_PREFIX_PATH "lib/GLEW/lib/cmake/glew")
 find_package(glew CONFIG REQUIRED)
 target_link_libraries(wine GLEW::glew_s)
-
-# GLFW
-## link
-set(CMAKE_PREFIX_PATH "lib/GLFW/lib/cmake/glfw3")
-find_package(glfw3 CONFIG REQUIRED)
-target_link_libraries(wine glfw)
