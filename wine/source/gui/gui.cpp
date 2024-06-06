@@ -4,6 +4,7 @@
 #include <GLFW/glfw3.h>
 
 #include "../core/base.hpp"
+#include "../memory/data.hpp"
 
 static void drawMenu() {
     // Draw menu
@@ -19,5 +20,5 @@ void wine::gui::destroyGUI() {
 }
 
 void wine::gui::draw() {
-    drawMenu();
+    if(wine::mem::data::gui::isMenuOpened) drawMenu();
 }
