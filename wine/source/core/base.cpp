@@ -6,7 +6,6 @@
 
 using namespace wine::mem;
 using namespace wine::hooks;
-using namespace wine::gui;
 
 static volatile bool isStoped = true; // true if cheat stoped
 
@@ -18,7 +17,6 @@ int wine::core::init(const HMODULE hDll) {
     if(!data::stuff::hACClient) return 1;
 
     // initialize modules
-    if(initGUI()) return 1;
     if(initHooks()) return 1;
 
     return 0;
