@@ -7,6 +7,9 @@ namespace wine::mem::data {
         inline HMODULE hDll = nullptr;
         inline HMODULE hACClient = nullptr;
     }
+    namespace gui {
+        inline bool isMenuOpened = false;
+    }
     namespace hacks {
         inline bool isVisualHack = false;
         inline bool isGodMode = false;
