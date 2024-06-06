@@ -10,7 +10,8 @@ static void drawMenu() {
 }
 
 int wine::gui::initGUI() {
-    // по нулям бро
+    if(glewInit()) return 1;
+    isGUIInited = true;
     return 0;
 }
 
@@ -18,5 +19,8 @@ void wine::gui::destroyGUI() {
 }
 
 void wine::gui::draw() {
+    if(!isGUIInited) {
+        if(initGUI()) return;
+    }
     if(isMenuOpened) drawMenu();
 }
