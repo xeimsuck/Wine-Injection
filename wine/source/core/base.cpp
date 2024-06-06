@@ -15,7 +15,7 @@ int wine::core::init(const HMODULE hDll) {
     if(!hDll) return 1;
     data::stuff::hDll = hDll;
     data::stuff::hACClient = GetModuleHandleW(L"ac_client.exe");
-    if(data::stuff::hACClient) return 1;
+    if(!data::stuff::hACClient) return 1;
 
     // initialize modules
     if(initGUI()) return 1;
@@ -31,11 +31,12 @@ void wine::core::destroy() {
 
 void wine::core::start() {
     isStoped = false;
+    enableHookSwapBuffers();
     while (!isStoped) { // Game Loop
-
     }
 }
 
 void wine::core::stop() {
+    disableHookSwapBuffers();
     isStoped = true;
 }

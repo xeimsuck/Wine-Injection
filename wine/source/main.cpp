@@ -4,7 +4,7 @@
 
 // Launch cheat
 static void launch(const HMODULE hDll) {
-    if(wine::core::init(hDll)) wine::core::start();
+    if(!wine::core::init(hDll)) wine::core::start();
     else wine::core::destroy();
 }
 
