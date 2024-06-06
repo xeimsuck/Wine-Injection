@@ -19,7 +19,7 @@ namespace wine::mem::data {
         inline bool isAimBot = false;
     }
     namespace binds {
-        inline unsigned short openMenu = VK_INSERT;
+        inline unsigned short bindKeyOpenMenu = VK_INSERT;
     }
 }
 

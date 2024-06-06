@@ -1,5 +1,6 @@
 #include "base.hpp"
 
+#include "binds.h"
 #include "../gui/gui.h"
 #include "../memory/data.hpp"
 #include "../hooks/hooks.hpp"
@@ -31,6 +32,7 @@ void wine::core::start() {
     isStoped = false;
     enableHookSwapBuffers();
     while (!isStoped) { // Game Loop
+        inspectBinds();
     }
 }
 
