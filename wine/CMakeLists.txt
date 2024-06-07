@@ -24,3 +24,14 @@ target_link_libraries(wine "${CMAKE_CURRENT_LIST_DIR}/lib/MinHook/lib/libMinHook
 set(CMAKE_PREFIX_PATH "lib/GLEW/lib/cmake/glew")
 find_package(glew CONFIG REQUIRED)
 target_link_libraries(wine GLEW::glew_s)
+
+# ImGui
+## Build
+file(GLOB_RECURSE ImGui_SOURCE
+        "lib/ImGui/*.h"
+        "lib/ImGui/*.cpp"
+)
+add_library(ImGui STATIC ${ImGui_SOURCE})
+## Link
+target_include_directories(wine PRIVATE "lib/ImGui")
+target_link_libraries(wine ImGui)
