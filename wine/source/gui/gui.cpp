@@ -45,18 +45,19 @@ void wine::gui::draw() {
     if(!isGUIInited) {
         if(initGUI()) return;
     }
-    if(isMenuOpened) drawMenu();
-}
 
-static void wine::gui::drawMenu() {
-    // Draw menu
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplWin32_NewFrame();
     ImGui::NewFrame();
 
-    ImGui::Begin("WINE");
-    ImGui::End();
+    if(isMenuOpened) drawMenu();
 
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+}
+
+static void wine::gui::drawMenu() {
+    // Main Window
+    ImGui::Begin("WINE");
+    ImGui::End();
 }
