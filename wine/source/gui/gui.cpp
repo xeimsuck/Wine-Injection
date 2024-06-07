@@ -13,17 +13,8 @@
 
 using namespace wine::mem::data::gui;
 
-static void drawMenu() {
-    // Draw menu
-    ImGui_ImplOpenGL3_NewFrame();
-    ImGui_ImplWin32_NewFrame();
-    ImGui::NewFrame();
-
-    ImGui::Begin("WINE");
-    ImGui::End();
-
-    ImGui::Render();
-    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+namespace wine::gui {
+    static void drawMenu();
 }
 
 int wine::gui::initGUI() {
@@ -55,4 +46,17 @@ void wine::gui::draw() {
         if(initGUI()) return;
     }
     if(isMenuOpened) drawMenu();
+}
+
+static void wine::gui::drawMenu() {
+    // Draw menu
+    ImGui_ImplOpenGL3_NewFrame();
+    ImGui_ImplWin32_NewFrame();
+    ImGui::NewFrame();
+
+    ImGui::Begin("WINE");
+    ImGui::End();
+
+    ImGui::Render();
+    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
