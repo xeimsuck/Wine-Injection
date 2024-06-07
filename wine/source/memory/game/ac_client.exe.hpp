@@ -7,6 +7,9 @@
 namespace wine::mem::ac_client {
     // functions
     // description: contains all pointers to function
+    namespace global {
+        constexpr UINT_PTR pEntityPointersList = 0x191FCC;
+    }
     namespace functions {
         constexpr UINT_PTR pEntityDamage = 0x1C130;
     }
