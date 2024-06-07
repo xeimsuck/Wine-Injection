@@ -8,11 +8,11 @@ add_library(wine SHARED source/main.cpp
         source/hooks/hooks.cpp
         source/hooks/hooks.hpp
         source/gui/gui.cpp
-        source/gui/gui.h
+        source/gui/gui.hpp
         source/hooks/hookSwapBuffers.cpp
         source/hooks/hookSwapBuffers.h
         source/core/binds.cpp
-        source/core/binds.h)
+        source/core/binds.hpp)
 
 # MinHook
 ## link

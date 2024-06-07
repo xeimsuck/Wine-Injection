@@ -1,4 +1,4 @@
-#include "gui.h"
+#include "gui.hpp"
 #include <GL/glew.h>
 #include "../core/base.hpp"
 #include "../memory/data.hpp"

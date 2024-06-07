@@ -1,7 +1,7 @@
 #include "hookSwapBuffers.h"
 #include <windows.h>
 #include <MinHook.h>
-#include "../gui/gui.h"
+#include "../gui/gui.hpp"
 
 WINBOOL WINAPI (*tramplineSwapBuffers)(HDC) = nullptr;
 

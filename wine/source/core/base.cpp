@@ -1,7 +1,7 @@
 #include "base.hpp"
 
-#include "binds.h"
-#include "../gui/gui.h"
+#include "binds.hpp"
+#include "../gui/gui.hpp"
 #include "../memory/data.hpp"
 #include "../hooks/hooks.hpp"
 

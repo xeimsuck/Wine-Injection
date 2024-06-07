@@ -1,4 +1,4 @@
-#include "binds.h"
+#include "binds.hpp"
 #include "../memory/data.hpp"
 
 using namespace wine::mem::data::binds;
