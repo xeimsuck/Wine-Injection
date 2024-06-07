@@ -34,4 +34,5 @@ file(GLOB_RECURSE ImGui_SOURCE
 add_library(ImGui STATIC ${ImGui_SOURCE})
 ## Link
 target_include_directories(wine PRIVATE "lib/ImGui")
+target_link_libraries(ImGui Dwmapi.lib)
 target_link_libraries(wine ImGui)
