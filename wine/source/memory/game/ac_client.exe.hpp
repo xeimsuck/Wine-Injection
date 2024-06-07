@@ -5,17 +5,20 @@
 
 // module: ac_client.exe
 namespace wine::mem::ac_client {
-    // functions
-    // description: contains all pointers to function
+    // global variables
+    // description: contains global and static variables
     namespace global {
         constexpr UINT_PTR pEntityPointersList = 0x191FCC;
     }
+
+    // functions
+    // description: contains pointers to function
     namespace functions {
         constexpr UINT_PTR pEntityDamage = 0x1C130;
     }
 
     // class: entity
-    // description: contains all data of entity
+    // description: contains data of entity
     // size: idk
     namespace entity {
         constexpr UINT_PTR fPositionX = 0x28;
