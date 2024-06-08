@@ -8,6 +8,7 @@ namespace wine::mem::ac_client {
     // global variables
     // description: contains global and static variables
     namespace global {
+        constexpr UINT_PTR pPlayerPointer = 0x18AC00;
         constexpr UINT_PTR pEntityPointersList = 0x191FCC;
     }
 
