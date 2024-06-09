@@ -44,18 +44,18 @@ void wine::core::stop() {
 
 
 int wine::core::initMem(const HMODULE _hDll) {
-    using namespace data::stuff;
-    using namespace ac_client::global;
+    using namespace data;
 
     if(!_hDll) return 1;
-    hDll = _hDll;
+    stuff::hDll = _hDll;
 
-    hACClient = GetModuleHandleW(L"ac_client.exe");
-    if(!hACClient) return 1;
-    const auto castedACClient = reinterpret_cast<UINT_PTR>(hACClient);
+    stuff::hACClient = GetModuleHandleW(L"ac_client.exe");
+    if(!stuff::hACClient) return 1;
+    const auto castedACClient = reinterpret_cast<UINT_PTR>(stuff::hACClient);
 
-    pPointerToPlayer = castedACClient + pPlayerPointer;
-    pVectorOfEntityList = reinterpret_cast<std::vector<UINT_PTR>*>(castedACClient+vEntityPointersList);
+    stuff::pPlayer = *reinterpret_cast<UINT_PTR*>(castedACClient + ac_client::global::pPlayer);
+    stuff::pEntityList = reinterpret_cast<UINT_PTR*>(ac_client::global::pEntityPointerList);
+    stuff::pEntityListSize = reinterpret_cast<int*>(castedACClient + ac_client::global::iEntityPointerListSize);
 
     return 0;
 }

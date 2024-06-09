@@ -7,8 +7,9 @@ namespace wine::mem::data {
     namespace stuff {
         inline HMODULE hDll = nullptr;
         inline HMODULE hACClient = nullptr;
-        inline UINT_PTR pPointerToPlayer = 0;
-        inline std::vector<UINT_PTR>* pVectorOfEntityList = nullptr;
+        inline UINT_PTR pPlayer = 0;
+        inline UINT_PTR* pEntityList = nullptr;
+        inline int* pEntityListSize = nullptr;
     }
     namespace gui {
         inline bool isGUIInited = false;
