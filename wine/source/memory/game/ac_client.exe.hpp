@@ -10,6 +10,7 @@ namespace wine::mem::ac_client {
     namespace global {
         constexpr UINT_PTR pPlayerPointer = 0x18AC00;
         constexpr UINT_PTR pEntityPointersList = 0x191FCC;
+        constexpr UINT_PTR mViewMatrix = 0x0057DFD0;
     }
 
     // functions
