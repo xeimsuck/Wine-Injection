@@ -1,11 +1,14 @@
 #ifndef DATA_H
 #define DATA_H
+#include <vector>
 #include "../core/base.hpp"
 
 namespace wine::mem::data {
     namespace stuff {
         inline HMODULE hDll = nullptr;
         inline HMODULE hACClient = nullptr;
+        inline UINT_PTR pPointerToPlayer = NULL;
+        inline std::vector<UINT_PTR>* pVectorOfEntityList = nullptr;
     }
     namespace gui {
         inline bool isGUIInited = false;
