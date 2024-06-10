@@ -12,7 +12,11 @@ add_library(wine SHARED source/main.cpp
         source/hooks/hookSwapBuffers.cpp
         source/hooks/hookSwapBuffers.h
         source/core/binds.cpp
-        source/core/binds.hpp)
+        source/core/binds.hpp
+        source/gui/shader.cpp
+        source/gui/shader.hpp
+        source/shaders/shadersESP.h
+)
 
 # MinHook
 ## link

@@ -4,6 +4,7 @@
 #include "../gui/gui.hpp"
 #include "../memory/data.hpp"
 #include "../memory/game/ac_client.exe.hpp"
+#include "../shaders/shadersESP.h"
 #include "../hooks/hooks.hpp"
 
 using namespace wine::mem;
@@ -46,6 +47,7 @@ void wine::core::stop() {
 int wine::core::initMem(const HMODULE _hDll) {
     using namespace data;
 
+    // Init Stuff
     if(!_hDll) return 1;
     stuff::hDll = _hDll;
 

@@ -7,12 +7,16 @@
 #include <imgui_impl_win32.h>
 #include <GL/glew.h>
 
+#include "shader.hpp"
 #include "../core/base.hpp"
 #include "../memory/data.hpp"
+#include "../shaders/shadersESP.h"
 
 
 using namespace wine::mem::data::gui;
 using namespace wine::mem::data::hacks;
+
+static wine::gui::shader* shaderESP;
 
 namespace wine::gui {
     static void drawMenu();
@@ -24,6 +28,12 @@ namespace wine::gui {
 int wine::gui::initGUI() {
     // GLEW Initialize
     if(glewInit()) return 1;
+
+    // Shaders Initialization
+    shaderESP = new shader;
+    if(shaderESP->createVertexShader(wine::shaders::sourceVertexShaderESP)) return 1;
+    if(shaderESP->createFragmentShader(wine::shaders::sourceFragmentShaderESP)) return 1;
+    if(shaderESP->linkProgram()) return 1;
 
     // ImGui Initialize
     IMGUI_CHECKVERSION();
@@ -43,11 +53,13 @@ void wine::gui::destroyGUI() {
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplWin32_Shutdown();
     ImGui::DestroyContext();
+
+    delete shaderESP;
 }
 
 void wine::gui::draw() {
     if(!isGUIInited) {
-        if(initGUI()) return;
+        if(initGUI()) throw;
     }
 
     if(isESP) drawESP();
