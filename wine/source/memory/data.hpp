@@ -16,7 +16,9 @@ namespace wine::mem::data {
         inline bool isMenuOpened = false;
     }
     namespace hacks {
-        inline bool isVisualHack = false;
+        inline bool isESP = false;
+        inline bool isESPBoxes = false;
+        inline bool isESPName = false;
         inline bool isGodMode = false;
         inline bool isInfinityAmmo = false;
         inline bool isInstantKill = false;

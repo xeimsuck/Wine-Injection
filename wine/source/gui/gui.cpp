@@ -12,9 +12,13 @@
 
 
 using namespace wine::mem::data::gui;
+using namespace wine::mem::data::hacks;
 
 namespace wine::gui {
     static void drawMenu();
+    static void drawESP();
+    static void drawESPBoxes();
+    static void drawESPName();
 }
 
 int wine::gui::initGUI() {
@@ -46,6 +50,8 @@ void wine::gui::draw() {
         if(initGUI()) return;
     }
 
+    if(isESP) drawESP();
+
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplWin32_NewFrame();
     ImGui::NewFrame();
@@ -61,3 +67,18 @@ static void wine::gui::drawMenu() {
     ImGui::Begin("WINE");
     ImGui::End();
 }
+
+void wine::gui::drawESP() {
+    if(isESPBoxes) drawESPBoxes();
+    if(isESPName) drawESPName();
+}
+
+void wine::gui::drawESPBoxes() {
+
+}
+
+void wine::gui::drawESPName() {
+
+}
+
+
