@@ -54,7 +54,7 @@ int wine::core::initMem(const HMODULE _hDll) {
     const auto castedACClient = reinterpret_cast<UINT_PTR>(stuff::hACClient);
 
     stuff::pPlayer = *reinterpret_cast<UINT_PTR*>(castedACClient + ac_client::global::pPlayer);
-    stuff::pEntityList = reinterpret_cast<UINT_PTR*>(ac_client::global::pEntityPointerList);
+    stuff::pEntityList = reinterpret_cast<UINT_PTR*>(castedACClient + ac_client::global::pEntityPointerList);
     stuff::pEntityListSize = reinterpret_cast<int*>(castedACClient + ac_client::global::iEntityPointerListSize);
 
     return 0;
