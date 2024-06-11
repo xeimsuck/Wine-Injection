@@ -29,6 +29,10 @@ set(CMAKE_PREFIX_PATH "lib/GLEW/lib/cmake/glew")
 find_package(glew CONFIG REQUIRED)
 target_link_libraries(wine GLEW::glew_s)
 
+# GLM
+## link
+target_include_directories(wine PRIVATE "lib/GLM/include")
+
 # ImGui
 ## Build
 file(GLOB_RECURSE ImGui_SOURCE
