@@ -34,6 +34,11 @@ int wine::gui::shader::createFragmentShader(const char* const source) {
     return !success;
 }
 
+unsigned int wine::gui::shader::getProgram() {
+    return shaderProgram;
+}
+
+
 int wine::gui::shader::linkProgram() {
     if(vertexShader) glAttachShader(shaderProgram, vertexShader);
     if(fragmentShader) glAttachShader(shaderProgram, fragmentShader);
@@ -57,6 +62,10 @@ int wine::gui::shader::linkProgram() {
 int wine::gui::shader::useProgram() {
     glUseProgram(shaderProgram);
     return 0;
+}
+
+wine::gui::shader::operator unsigned() {
+    return getProgram();
 }
 
 
