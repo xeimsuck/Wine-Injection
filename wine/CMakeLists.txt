@@ -39,7 +39,9 @@ file(GLOB_RECURSE ImGui_SOURCE
         "lib/ImGui/*.h"
         "lib/ImGui/*.cpp"
 )
-add_library(ImGui STATIC ${ImGui_SOURCE})
+add_library(ImGui STATIC ${ImGui_SOURCE}
+        source/hacks/hacks.cpp
+        source/hacks/hacks.hpp)
 ## Link
 target_include_directories(wine PRIVATE "lib/ImGui")
 target_link_libraries(ImGui Dwmapi.lib)
