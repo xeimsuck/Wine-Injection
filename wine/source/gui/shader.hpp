@@ -8,8 +8,7 @@ namespace wine::gui {
     public:
         shader();
         ~shader();
-        int createVertexShader(const char* source);
-        int createFragmentShader(const char* source);
+        int createShader(unsigned type, const char* source);
         unsigned int getProgram();
         int linkProgram();
         int useProgram();
@@ -18,6 +17,7 @@ namespace wine::gui {
     private:
         unsigned int vertexShader = 0;
         unsigned int fragmentShader = 0;
+        unsigned int geometryShader = 0;
         unsigned int shaderProgram = 0;
     };
 }

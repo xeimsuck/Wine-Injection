@@ -16,6 +16,8 @@ add_library(wine SHARED source/main.cpp
         source/gui/shader.cpp
         source/gui/shader.hpp
         source/shaders/shadersESP.h
+        source/hacks/hacks.cpp
+        source/hacks/hacks.hpp
 )
 
 # MinHook
@@ -39,9 +41,7 @@ file(GLOB_RECURSE ImGui_SOURCE
         "lib/ImGui/*.h"
         "lib/ImGui/*.cpp"
 )
-add_library(ImGui STATIC ${ImGui_SOURCE}
-        source/hacks/hacks.cpp
-        source/hacks/hacks.hpp)
+add_library(ImGui STATIC ${ImGui_SOURCE})
 ## Link
 target_include_directories(wine PRIVATE "lib/ImGui")
 target_link_libraries(ImGui Dwmapi.lib)

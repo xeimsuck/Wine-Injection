@@ -4,7 +4,6 @@
 #include "../gui/gui.hpp"
 #include "../memory/data.hpp"
 #include "../memory/game/ac_client.exe.hpp"
-#include "../shaders/shadersESP.h"
 #include "../hooks/hooks.hpp"
 
 using namespace wine::mem;
@@ -55,9 +54,11 @@ int wine::core::initMem(const HMODULE _hDll) {
     if(!stuff::hACClient) return 1;
     const auto castedACClient = reinterpret_cast<UINT_PTR>(stuff::hACClient);
 
-    stuff::pPlayer = *reinterpret_cast<UINT_PTR*>(castedACClient + ac_client::global::pPlayer);
+    stuff::player = *reinterpret_cast<UINT_PTR*>(castedACClient + ac_client::global::pPlayer);
     stuff::pEntityList = reinterpret_cast<UINT_PTR*>(castedACClient + ac_client::global::pEntityPointerList);
     stuff::pEntityListSize = reinterpret_cast<int*>(castedACClient + ac_client::global::iEntityPointerListSize);
+
+    stuff::matView = reinterpret_cast<glm::mat4*>(castedACClient + ac_client::global::mViewMatrix);
 
     return 0;
 }
