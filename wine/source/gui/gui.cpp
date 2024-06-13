@@ -20,7 +20,7 @@
 using namespace wine::mem::data::gui;
 using namespace wine::mem::data::hacks;
 
-static wine::gui::shader* shaderESPLine;
+static wine::gui::shader* shaderESPLine = nullptr, *shaderESPBox = nullptr;
 GLuint shaderESPVAO, shaderESPVBO;
 glm::vec3 shaderESPBuffer{};
 
@@ -37,13 +37,21 @@ int wine::gui::initGUI() {
     if(glewInit()) return 1;
 
     // Shaders Initialization
+    //// Line Shader
     shaderESPLine = new shader;
     if(shaderESPLine->createShader(GL_VERTEX_SHADER, shaders::sourceVertexShaderESP)) return 1;
     if(shaderESPLine->createShader(GL_GEOMETRY_SHADER, shaders::sourceGeometryShaderESPLine)) return 1;
     if(shaderESPLine->createShader(GL_FRAGMENT_SHADER, shaders::sourceFragmentShaderESP)) return 1;
     if(shaderESPLine->linkProgram()) return 1;
 
-    //// ESP
+    //// Box Shader
+    shaderESPBox = new shader;
+    if(shaderESPBox->createShader(GL_VERTEX_SHADER, shaders::sourceVertexShaderESP)) return 1;
+    if(shaderESPBox->createShader(GL_GEOMETRY_SHADER, shaders::sourceGeometryShaderESPBoxes)) return 1;
+    if(shaderESPBox->createShader(GL_FRAGMENT_SHADER, shaders::sourceFragmentShaderESP)) return 1;
+    if(shaderESPBox->linkProgram()) return 1;
+
+    // VAO
     GLint prevVAO;
     glGetIntegerv(GL_VERTEX_ARRAY_BINDING, &prevVAO);
 
@@ -154,7 +162,17 @@ void wine::gui::drawESPLine() {
 }
 
 void wine::gui::drawESPBox() {
+    GLint prevShader;
+    glGetIntegerv(GL_CURRENT_PROGRAM, &prevShader);
 
+    shaderESPBox->useProgram();
+    glUniformMatrix4fv(glGetUniformLocation(static_cast<GLuint>(*shaderESPBox), "view"),
+                    1, GL_FALSE, glm::value_ptr(*mem::data::stuff::matView));
+    glUniform3fv(glGetUniformLocation(static_cast<GLuint>(*shaderESPBox), "esp_color"),
+                    1, glm::value_ptr(esp::colorESP));
+    glDrawArrays(GL_POINTS, 0, 1);
+
+    glUseProgram(prevShader);
 }
 
 void wine::gui::drawESPName() {
