@@ -5,6 +5,7 @@
 
 namespace wine::hacks {
     bool isAlive(UINT_PTR entity);
+    int getHealth(UINT_PTR entity);
 }
 
 #endif //HACKS_HPP
