@@ -7,5 +7,5 @@ bool wine::hacks::isAlive(const UINT_PTR entity) {
 }
 
 int wine::hacks::getHealth(const UINT_PTR entity) {
-    return *reinterpret_cast<int*>(entity+mem::ac_client::entity::iHealth)>0;
+    return *reinterpret_cast<int*>(entity+mem::ac_client::entity::iHealth);
 }
