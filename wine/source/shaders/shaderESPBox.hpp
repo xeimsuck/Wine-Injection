@@ -2,7 +2,7 @@
 #define SHADERSESP_H
 
 namespace wine::shaders {
-    constexpr char sourceVertexShaderESP[] =
+    constexpr char sourceVertexShaderESPBox[] =
         R"(
         #version 330 core
 
@@ -14,7 +14,7 @@ namespace wine::shaders {
             gl_Position = view * vec4(position, 1.0f);
         }
         )";
-    constexpr char sourceFragmentShaderESP[] =
+    constexpr char sourceFragmentShaderESPBox[] =
         R"(
         #version 330 core
 
@@ -26,23 +26,7 @@ namespace wine::shaders {
             color = vec4(esp_color/255, 1.0f);
         }
         )";
-    constexpr char sourceGeometryShaderESPLine[] =
-        R"(
-        #version 330 core
-        layout (points) in;
-        layout (line_strip, max_vertices = 2) out;
-
-        void main() {
-            gl_Position = gl_in[0].gl_Position;
-            EmitVertex();
-
-            gl_Position = vec4(0.0f, -1.0f, 0.0f, 1.0f);
-            EmitVertex();
-
-            EndPrimitive();
-        }
-        )";
-    constexpr char sourceGeometryShaderESPBoxes[] =
+    constexpr char sourceGeometryShaderESPBox[] =
         R"(
         #version 330 core
         layout (points) in;

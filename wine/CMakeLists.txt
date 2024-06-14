@@ -15,9 +15,12 @@ add_library(wine SHARED source/main.cpp
         source/core/binds.hpp
         source/gui/shader.cpp
         source/gui/shader.hpp
-        source/shaders/shadersESP.h
+        source/shaders/shaderESPBox.hpp
         source/hacks/hacks.cpp
         source/hacks/hacks.hpp
+        source/shaders/shaders.hpp
+        source/shaders/shaderESPLine.hpp
+        source/shaders/shaderESPHealth.hpp
 )
 
 # MinHook

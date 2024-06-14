@@ -22,8 +22,8 @@ namespace wine::mem::data {
             inline bool isESP = false;
             inline bool isESPLines = false;
             inline bool isESPBoxes = false;
+            inline bool isESPHealths = false;
             inline bool isESPNames = false;
-            inline bool isRainbowESP = false;
             inline glm::vec3 colorESP{255, 0, 0};
         }
         inline bool isGodMode = false;

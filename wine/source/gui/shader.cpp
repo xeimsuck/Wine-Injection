@@ -3,7 +3,6 @@
 #include <GL/glew.h>
 
 #include "../core/base.hpp"
-#include "../shaders/shadersESP.h"
 
 wine::gui::shader::shader() {
     shaderProgram = glCreateProgram();
