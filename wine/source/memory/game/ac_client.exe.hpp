@@ -31,6 +31,8 @@ namespace wine::mem::ac_client {
         constexpr UINT_PTR fCameraHeight = 0x50;
         constexpr UINT_PTR fMaxCameraHeight = 0x54;
         constexpr UINT_PTR iHealth = 0xEC;
+        constexpr UINT_PTR fYaw = 0x34;
+        constexpr UINT_PTR fPitch = 0x38;
         constexpr UINT_PTR iArmor = 0xF0;
         constexpr UINT_PTR iMK77Ammo  = 0x108;
         constexpr UINT_PTR iTMPAmmo  = 0x10C;
