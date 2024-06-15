@@ -22,6 +22,7 @@ add_library(wine SHARED source/main.cpp
         source/shaders/shaderESPLine.hpp
         source/shaders/shaderESPHealth.hpp
 )
+target_include_directories(wine PRIVATE source)
 
 # MinHook
 ## link
