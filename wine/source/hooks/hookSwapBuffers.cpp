@@ -1,11 +1,14 @@
 #include "hookSwapBuffers.h"
 #include <windows.h>
 #include <MinHook.h>
-#include "../gui/gui.hpp"
+#include "gui/gui.hpp"
+#include "memory/data.hpp"
+#include "hacks/hacks.hpp"
 
 WINBOOL WINAPI (*tramplineSwapBuffers)(HDC) = nullptr;
 
 WINBOOL WINAPI detouredSwapBuffers(HDC hDС) {
+    if(wine::mem::data::hacks::aimbot::isAimBot) wine::hacks::aimbot();
     wine::gui::draw();
     return tramplineSwapBuffers(hDС);
 }

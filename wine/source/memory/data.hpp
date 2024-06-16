@@ -26,10 +26,13 @@ namespace wine::mem::data {
             inline bool isESPNames = false;
             inline glm::vec3 colorESP{255, 0, 0};
         }
+        namespace aimbot {
+            inline UINT_PTR target = 0;
+            inline bool isAimBot = false;
+        }
         inline bool isGodMode = false;
         inline bool isInfinityAmmo = false;
         inline bool isInstantKill = false;
-        inline bool isAimBot = false;
     }
     namespace binds {
         inline unsigned short bindKeyOpenMenu = VK_INSERT;

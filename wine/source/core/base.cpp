@@ -1,11 +1,14 @@
 #include "base.hpp"
 
+#include <thread>
 #include "binds.hpp"
 #include "../gui/gui.hpp"
+#include "../hacks/hacks.hpp"
 #include "../memory/data.hpp"
 #include "../memory/game/ac_client.exe.hpp"
 #include "../hooks/hooks.hpp"
 
+using namespace std::chrono_literals;
 using namespace wine::mem;
 using namespace wine::hooks;
 
@@ -34,6 +37,7 @@ void wine::core::start() {
     enableHookSwapBuffers();
     while (!isStoped) { // Game Loop
         inspectBinds();
+        if(data::hacks::aimbot::isAimBot) data::hacks::aimbot::target = hacks::findAimbotTarget();
     }
 }
 
