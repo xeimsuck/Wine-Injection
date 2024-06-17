@@ -20,10 +20,10 @@ namespace wine::mem::data {
     namespace hacks {
         namespace esp {
             inline bool isESP = false;
-            inline bool isESPLines = false;
-            inline bool isESPBoxes = false;
-            inline bool isESPHealths = false;
-            inline bool isESPNames = false;
+            inline bool isESPLines = true;
+            inline bool isESPBoxes = true;
+            inline bool isESPHealths = true;
+            inline bool isESPNames = true;
             inline glm::vec3 colorESP{255, 0, 0};
         }
         namespace aimbot {
@@ -36,6 +36,8 @@ namespace wine::mem::data {
     }
     namespace binds {
         inline unsigned short bindKeyOpenMenu = VK_INSERT;
+        inline unsigned short bindKeyESP = VK_F1;
+        inline unsigned short bindKeyAimBot = VK_F2;
     }
 }
 
