@@ -39,10 +39,10 @@ namespace wine::shaders {
             gl_Position = gl_in[0].gl_Position+vec4(-1.5f, 0.0f, 0.0f, 0.0f); // Left-Bottom
             EmitVertex();
 
-            gl_Position = gl_in[0].gl_Position+vec4(-1.5f, 8.0f, 0.0f, 0.0f); // Left-Top
+            gl_Position = gl_in[0].gl_Position+vec4(-1.5f, 10.0f, 0.0f, 0.0f); // Left-Top
             EmitVertex();
 
-            gl_Position = gl_in[0].gl_Position+vec4(1.5f, 8.0f, 0.0f, 0.0f); // Right-Top
+            gl_Position = gl_in[0].gl_Position+vec4(1.5f, 10.0f, 0.0f, 0.0f); // Right-Top
             EmitVertex();
 
             gl_Position = gl_in[0].gl_Position+vec4(1.5f, 0.0f, 0.0f, 0.0f); // Right-Bottom
