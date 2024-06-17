@@ -21,6 +21,8 @@ add_library(wine SHARED source/main.cpp
         source/shaders/shaders.hpp
         source/shaders/shaderESPLine.hpp
         source/shaders/shaderESPHealth.hpp
+        source/hooks/hookDamageEntity.cpp
+        source/hooks/hookDamageEntity.hpp
 )
 target_include_directories(wine PRIVATE source)
 

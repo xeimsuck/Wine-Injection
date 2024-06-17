@@ -125,6 +125,8 @@ static void wine::gui::drawMenu() {
         ImGui::Checkbox("ESP Names", &esp::isESPNames);
         ImGui::ColorPicker3("ESP Color", &esp::colorESP.r);
     }
+    ImGui::Checkbox("AimBot", &aimbot::isAimBot);
+    ImGui::Checkbox("GodMode", &isGodMode);
     ImGui::End();
 }
 

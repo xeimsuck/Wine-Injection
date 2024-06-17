@@ -5,16 +5,16 @@
 #include "memory/data.hpp"
 #include "hacks/hacks.hpp"
 
-WINBOOL WINAPI (*tramplineSwapBuffers)(HDC) = nullptr;
+WINBOOL WINAPI (*trampolineSwapBuffers)(HDC) = nullptr;
 
 WINBOOL WINAPI detouredSwapBuffers(HDC hDС) {
     if(wine::mem::data::hacks::aimbot::isAimBot) wine::hacks::aimbot();
     wine::gui::draw();
-    return tramplineSwapBuffers(hDС);
+    return trampolineSwapBuffers(hDС);
 }
 
 int wine::hooks::createHookSwapBuffers() {
-    return MH_CreateHook(reinterpret_cast<LPVOID>(SwapBuffers), reinterpret_cast<LPVOID>(detouredSwapBuffers), reinterpret_cast<LPVOID*>(&tramplineSwapBuffers));
+    return MH_CreateHook(reinterpret_cast<LPVOID>(SwapBuffers), reinterpret_cast<LPVOID>(detouredSwapBuffers), reinterpret_cast<LPVOID*>(&trampolineSwapBuffers));
 }
 
 void wine::hooks::enableHookSwapBuffers() {

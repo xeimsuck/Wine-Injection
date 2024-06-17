@@ -35,6 +35,7 @@ void wine::core::destroy() {
 void wine::core::start() {
     isStoped = false;
     enableHookSwapBuffers();
+    enableHookDamageEntity();
     while (!isStoped) { // Game Loop
         inspectBinds();
         if(data::hacks::aimbot::isAimBot) data::hacks::aimbot::target = hacks::findAimbotTarget();

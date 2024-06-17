@@ -38,6 +38,7 @@ namespace wine::mem::data {
         inline unsigned short bindKeyOpenMenu = VK_INSERT;
         inline unsigned short bindKeyESP = VK_F1;
         inline unsigned short bindKeyAimBot = VK_F2;
+        inline unsigned short bindKeyGodMode = VK_F3;
     }
 }
 
